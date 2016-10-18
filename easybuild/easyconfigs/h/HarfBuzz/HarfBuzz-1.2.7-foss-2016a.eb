@@ -1,9 +1,7 @@
-# easybuild easyconfig
+easyblock = 'ConfigureMake'
 
 name = 'HarfBuzz'
 version = '1.2.7'
-
-easyblock = 'ConfigureMake'
 
 homepage = 'http://www.freedesktop.org/wiki/Software/HarfBuzz'
 description = """HarfBuzz is an OpenType text shaping engine."""
@@ -15,11 +13,10 @@ sources = [SOURCELOWER_TAR_BZ2]
 
 glibver = '2.48.0'
 dependencies = [
-    ('GLib', glibver, '-Python-2.7.11-libX11-1.6.3'),
+    ('GLib', glibver),
     ('cairo', '1.14.6', '-GLib-%s' % glibver),
-    ('freetype', '2.6.3', '-no-HarfBuzz'),
-    ('GObject-Introspection', '1.48.0'),
-    ('pkg-config', '0.29'),
+    ('freetype', '2.6.3'),
+    ('GObject-Introspection', '1.48.0')
 ]
 
 configopts = "--enable-introspection=yes --with-gobject=yes --enable-static --enable-shared --with-cairo "
