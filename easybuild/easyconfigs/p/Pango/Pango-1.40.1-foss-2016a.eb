@@ -15,20 +15,11 @@ sources = [SOURCELOWER_TAR_XZ]
 
 glibver = '2.48.0'
 dependencies = [
-    ('GLib', glibver, '-Python-2.7.11-libX11-1.6.3'),
+    ('GLib', glibver),
     ('cairo', '1.14.6', '-GLib-%s' % glibver),
     ('HarfBuzz', '1.2.7'),
     ('GObject-Introspection', '1.48.0'),
-    ('fontconfig', '2.11.95', '-freetype-no-HarfBuzz'),
-]
-
-builddependencies = [
-    ('pkg-config', '0.29'),
-    ('libpthread-stubs', '0.3'),
-    ('xproto', '7.0.28'),
-    ('renderproto', '0.11'),
-    ('kbproto', '1.0.7'),
-    ('xextproto', '7.3.0'),
+    ('fontconfig', '2.11.95')
 ]
 
 configopts = "--disable-silent-rules --enable-introspection=yes --enable-static --enable-shared "
